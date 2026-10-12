@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The main screen: one line of state, the setup until it is done, then what is used day to day. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/Text.Title"
+            android:text="@string/app_name" />
+
+        <LinearLayout
+            style="@style/Card"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/status_icon"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:importantForAccessibility="no" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/status_title"
+                    style="@style/Text.Headline" />
+
+                <TextView
+                    android:id="@+id/status_text"
+                    style="@style/Text.Secondary"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/status_action"
+                style="@style/Button.Primary"
+                android:layout_marginStart="16dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/update_card"
+            style="@style/Card"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/update_title"
+                style="@style/Text.Headline" />
+
+            <TextView
+                android:id="@+id/update_text"
+                style="@style/Text.Secondary"
+                android:layout_marginTop="4dp" />
+
+            <Button
+                android:id="@+id/update_action"
+                style="@style/Button.Primary"
+                android:layout_marginTop="14dp"
+                android:text="@string/update_action" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/steps_card"
+            style="@style/Card"
+            android:paddingBottom="8dp">
+
+            <TextView
+                style="@style/Text.Section"
+                android:layout_marginBottom="4dp"
+                android:text="@string/steps_title" />
+
+            <LinearLayout
+                android:id="@+id/steps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/desktop_card"
+            style="@style/Card">
+
+            <TextView
+                style="@style/Text.Section"
+                android:text="@string/desktop_title" />
+
+            <LinearLayout
+                android:id="@+id/desktop_segment"
+                style="@style/Segment">
+
+                <TextView
+                    android:id="@+id/desktop_gnome"
+                    style="@style/SegmentItem"
+                    android:text="@string/desktop_gnome" />
+
+                <TextView
+                    android:id="@+id/desktop_lxqt"
+                    style="@style/SegmentItem"
+                    android:text="@string/desktop_lxqt" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/desktop_hint"
+                style="@style/Text.Secondary"
+                android:layout_marginTop="10dp" />
+
+            <Button
+                android:id="@+id/desktop_install"
+                style="@style/Button.Primary"
+                android:layout_marginTop="14dp"
+                android:text="@string/desktop_install"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/desktop_update"
+                style="@style/Button.Primary"
+                android:layout_marginTop="14dp"
+                android:text="@string/desktop_update"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/engine_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <View
+                    style="@style/Divider"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    style="@style/Text.Section"
+                    android:text="@string/engine_title" />
+
+                <LinearLayout
+                    android:id="@+id/engine_segment"
+                    style="@style/Segment">
+
+                    <TextView
+                        android:id="@+id/engine_proot"
+                        style="@style/SegmentItem"
+                        android:text="@string/engine_proot" />
+
+                    <TextView
+                        android:id="@+id/engine_chroot"
+                        style="@style/SegmentItem"
+                        android:text="@string/engine_chroot" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/engine_hint"
+                    style="@style/Text.Secondary"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/control_card"
+            style="@style/Card">
+
+            <TextView
+                style="@style/Text.Section"
+                android:text="@string/touch_title" />
+
+            <LinearLayout style="@style/Segment">
+
+                <TextView
+                    android:id="@+id/touch_screen"
+                    style="@style/SegmentItem"
+                    android:text="@string/mode_touch" />
+
+                <TextView
+                    android:id="@+id/touch_pad"
+                    style="@style/SegmentItem"
+                    android:text="@string/mode_cursor" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/touch_hint"
+                style="@style/Text.Secondary"
+                android:layout_marginTop="10dp" />
+
+            <View style="@style/Divider" />
+
+            <LinearLayout
+                android:id="@+id/keyboard_row"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Text.Section"
+                        android:layout_marginBottom="2dp"
+                        android:text="@string/keyboard_title" />
+
+                    <TextView
+                        style="@style/Text.Secondary"
+                        android:text="@string/keyboard_text" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/keyboard_value"
+                    style="@style/Text.Item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/more_toggle"
+            style="@style/Button.Text"
+            android:layout_marginTop="14dp"
+            android:drawableEnd="@drawable/ic_chevron_down"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:minHeight="44dp"
+            android:text="@string/more" />
+
+        <LinearLayout
+            android:id="@+id/more_list"
+            style="@style/Card"
+            android:layout_marginTop="4dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/more_tile"
+                style="@style/MoreRow"
+                android:text="@string/more_tile" />
+
+            <TextView
+                android:id="@+id/more_reinstall"
+                style="@style/MoreRow"
+                android:text="@string/more_reinstall" />
+
+            <TextView
+                android:id="@+id/more_remove"
+                style="@style/MoreRow"
+                android:text="@string/more_remove" />
+
+            <TextView
+                android:id="@+id/more_version"
+                style="@style/Text.Secondary"
+                android:paddingStart="22dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

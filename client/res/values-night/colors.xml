@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#111215</color>
+    <color name="surface">#1D1E22</color>
+    <color name="surface_variant">#2A2C31</color>
+    <color name="segment_on">#41444C</color>
+    <color name="line">#303238</color>
+    <color name="text">#E7E8EB</color>
+    <color name="text2">#A0A4AC</color>
+    <color name="accent">#86A9FF</color>
+    <color name="accent_soft">#233254</color>
+    <color name="on_accent">#0B1A3D</color>
+    <color name="success">#62C47F</color>
+    <color name="warning">#F1B24B</color>
+    <color name="ripple">#33FFFFFF</color>
+</resources>

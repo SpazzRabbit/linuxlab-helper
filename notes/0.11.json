@@ -1,0 +1,4 @@
+{
+ "ru": "Помощник сам находит свои новые версии на GitHub и предлагает обновить рабочий стол Ubuntu, когда в нём есть исправления. Исправлены apt и режим chroot.",
+ "en": "The helper finds its new versions on GitHub and offers to update the Ubuntu desktop when there are fixes for it. Fixed apt and the chroot mode."
+}

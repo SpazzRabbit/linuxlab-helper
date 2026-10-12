@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Installing into Linux: what to install, then the command and where to run it. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/row"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Text.Title"
+                android:layout_marginStart="6dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/subtitle"
+            style="@style/Text.Secondary"
+            android:layout_marginTop="6dp"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/page_choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/option_ubuntu"
+                style="@style/OptionCard"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/radio" />
+
+                    <TextView
+                        style="@style/Text.Headline"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/option_ubuntu_title" />
+
+                    <TextView
+                        style="@style/Text.Badge"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/option_recommended" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text.Secondary"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/option_ubuntu_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/option_touch"
+                style="@style/OptionCard"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:importantForAccessibility="no"
+                        android:src="@drawable/radio" />
+
+                    <TextView
+                        style="@style/Text.Headline"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/option_touch_title" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/Text.Secondary"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/option_touch_text" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/next"
+                style="@style/Button.Primary"
+                android:layout_marginTop="20dp"
+                android:text="@string/next" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/page_run"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                style="@style/Card"
+                android:layout_marginTop="20dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <LinearLayout
+                    android:id="@+id/run_steps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/open"
+                    style="@style/Button.Primary"
+                    android:text="@string/open_linux_lab" />
+
+                <Button
+                    android:id="@+id/done"
+                    style="@style/Button.Secondary"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/done" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- moved into the step that says to paste it -->
+        <LinearLayout
+            android:id="@+id/command_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/code"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="6dp"
+            android:paddingBottom="6dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/command"
+                style="@style/Text"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/copy"
+                style="@style/Button.Text"
+                android:text="@string/copy" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

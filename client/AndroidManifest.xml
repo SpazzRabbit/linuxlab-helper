@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="dev.linuxlab.helper"
+    android:versionCode="11"
+    android:versionName="0.11">
+
+    <uses-sdk android:minSdkVersion="33" android:targetSdkVersion="36" />
+    <!-- loopback only: the module listens on 127.0.0.1 inside the Linux Lab container -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- the touch layer is an application overlay, so that the shade and the taskbar stay above it -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- updates of this app from its releases on GitHub (Updates.java); Android asks the person each time -->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- to tell whether Linux Lab is there and to open it -->
+    <queries>
+        <package android:name="com.hihonor.pcengine" />
+        <!-- apps that hand out root, for the chroot mode (Root.java) -->
+        <package android:name="me.weishu.kernelsu"/>
+        <package android:name="com.rifsxd.ksunext"/>
+        <package android:name="com.sukisu.ultra"/>
+        <package android:name="com.topjohnwu.magisk"/>
+        <package android:name="io.github.vvb2060.magisk"/>
+        <package android:name="io.github.huskydg.magisk"/>
+        <package android:name="me.bmax.apatch"/>
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".InstallActivity"
+            android:exported="false" />
+        <receiver
+            android:name=".Updates$StatusReceiver"
+            android:exported="false" />
+        <service
+            android:name=".TouchService"
+            android:exported="true"
+            android:label="@string/service_name"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service" />
+        </service>
+        <service
+            android:name=".ModeTile"
+            android:exported="true"
+            android:icon="@drawable/ic_tile"
+            android:label="@string/tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
+    </application>
+</manifest>

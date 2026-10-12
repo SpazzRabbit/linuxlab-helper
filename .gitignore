@@ -1,0 +1,4 @@
+build/
+client/build/
+client/assets/linuxlab-helper.sh
+tests/testime/build/
