@@ -22,7 +22,7 @@ done
 
 client/build.sh >/dev/null
 bundled=$(sed -n 's/^payload=//p' client/assets/linuxlab-helper.sh | head -1)
-published=$(curl -fsL "https://github.com/$linux/releases/latest/download/manifest.json" |
+published=$(curl -fsL "https://github.com/$linux/releases/latest/download/manifest.json?t=$(date +%s)" |
     python3 -c 'import json, sys; print(json.load(sys.stdin)["payload"])' 2>/dev/null || true)
 [ "$bundled" = "$published" ] || { echo "release: the Linux side in the APK ($bundled) is not the published one ($published): ../gnome/host/release.sh first" >&2; exit 1; }
 
